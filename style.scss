@@ -1,4 +1,25 @@
 /*******************
+mixin
+*********************/
+
+@mixin border {
+  border: 2px solid #808285;
+  border-radius: 15px;
+}
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint== "phone" {
+    @media only screen and (min-width: 200px) and (max-width: 650px) {
+      @content;
+    }
+  } @else if $breakpoint== "tablet" {
+    @media only screen and (min-width: 651px) and (max-width: 896px) {
+      @content;
+    }
+  }
+}
+
+/*******************
 global
 *********************/
 
@@ -12,14 +33,24 @@ html {
   font-size: 16px;
 }
 
+
+
 .container {
   width: 70%;
   margin: 0 auto;
+
+  @include breakpoint(tablet) {
+    width: 90%;
+  }
+
+  @include breakpoint(phone) {
+    width: 95%;
+  }
 }
 
-@mixin border {
-  border: 2px solid #808285;
-  border-radius: 15px;
+img {
+  width: 100%;
+  display: block;
 }
 
 /*******************
@@ -33,6 +64,14 @@ first
     text-align: center;
     max-width: 770px;
     margin: 0 auto;
+    @include breakpoint(tablet) {
+      font-size: 2rem;
+    }
+
+    @include breakpoint(phone) {
+      font-size: 1.8rem;
+    }
+
     span {
       color: blue;
     }
@@ -43,6 +82,16 @@ first
     border-radius: 15px;
     display: block;
     margin: 0 auto;
+    width: 80%;
+    height: 450px;
+    @include breakpoint(tablet) {
+      width: 95%;
+      height: 300px;
+    }
+    @include breakpoint(phone) {
+      width: 95%;
+      height: 250px;
+    }
   }
   .btn {
     display: block;
@@ -61,6 +110,13 @@ first
     letter-spacing: 2x;
     cursor: pointer;
     transition: all 0.3s;
+    @include breakpoint(tablet) {
+      width: 95%;
+    }
+
+    @include breakpoint(phone) {
+      width: 95%;
+    }
 
     &:hover {
       background-color: transparent;
@@ -72,6 +128,13 @@ first
   .first_text {
     padding: 70px;
     font-size: 1.5rem;
+    @include breakpoint(tablet) {
+      padding: 40px;
+    }
+    @include breakpoint(phone) {
+      padding: 20px;
+      font-size: 1.2rem;
+    }
     p {
       margin-bottom: 50px;
       span {
@@ -87,12 +150,18 @@ first
       text-transform: uppercase;
       font-size: 2.3rem;
       text-align: center;
+      @include breakpoint(phone) {
+        font-size: 2rem;
+      }
     }
     h1 + p {
       font-size: 1.8rem;
       text-align: center;
       margin: 20px 0;
       font-weight: bolder;
+      @include breakpoint(phone) {
+        font-size: 1.6rem;
+      }
     }
 
     ul {
@@ -121,6 +190,9 @@ reference
   @include border();
   padding: 10px 70px;
   background-color: #f0f0f0;
+  @include breakpoint(phone) {
+    padding: 10px 30px;
+  }
   h3 {
     text-align: center;
     font-size: 1.5rem;
@@ -129,10 +201,15 @@ reference
     margin: 50px 0 40px 0;
   }
   .references_columns {
-    column-count: 2;
     color: #909090;
+    column-count: 2;
+    @include breakpoint(phone) {
+      column-count: 1;
+    }
     li {
-      padding: 5px 10px;
+      @include breakpoint(phone) {
+        padding: 2px 5px;
+      }
     }
   }
 }
@@ -145,11 +222,19 @@ footer {
   color: #707070;
   text-align: center;
   padding: 200px 100px 5px 100px;
+  @include breakpoint(phone) {
+    padding: 100px 20px 5px 20px;
+  }
   p {
     max-width: 950px;
     margin: 50px auto;
     span {
       font-weight: bold;
     }
+  }
+
+  .footer_logo {
+    width: 200px;
+    margin: 0 auto;
   }
 }

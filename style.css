@@ -1,4 +1,7 @@
 /*******************
+mixin
+*********************/
+/*******************
 global
 *********************/
 * {
@@ -12,6 +15,16 @@ html {
 .container {
   width: 70%;
   margin: 0 auto; }
+  @media only screen and (min-width: 651px) and (max-width: 896px) {
+    .container {
+      width: 90%; } }
+  @media only screen and (min-width: 200px) and (max-width: 650px) {
+    .container {
+      width: 95%; } }
+
+img {
+  width: 100%;
+  display: block; }
 
 /*******************
 first
@@ -25,13 +38,29 @@ first
     text-align: center;
     max-width: 770px;
     margin: 0 auto; }
+    @media only screen and (min-width: 651px) and (max-width: 896px) {
+      .first h2 {
+        font-size: 2rem; } }
+    @media only screen and (min-width: 200px) and (max-width: 650px) {
+      .first h2 {
+        font-size: 1.8rem; } }
     .first h2 span {
       color: blue; }
   .first iframe {
     border: 3px solid #808285;
     border-radius: 15px;
     display: block;
-    margin: 0 auto; }
+    margin: 0 auto;
+    width: 80%;
+    height: 450px; }
+    @media only screen and (min-width: 651px) and (max-width: 896px) {
+      .first iframe {
+        width: 95%;
+        height: 300px; } }
+    @media only screen and (min-width: 200px) and (max-width: 650px) {
+      .first iframe {
+        width: 95%;
+        height: 250px; } }
   .first .btn {
     display: block;
     width: 445px;
@@ -49,6 +78,12 @@ first
     letter-spacing: 2x;
     cursor: pointer;
     transition: all 0.3s; }
+    @media only screen and (min-width: 651px) and (max-width: 896px) {
+      .first .btn {
+        width: 95%; } }
+    @media only screen and (min-width: 200px) and (max-width: 650px) {
+      .first .btn {
+        width: 95%; } }
     .first .btn:hover {
       background-color: transparent;
       border-color: #34932d;
@@ -56,6 +91,13 @@ first
   .first .first_text {
     padding: 70px;
     font-size: 1.5rem; }
+    @media only screen and (min-width: 651px) and (max-width: 896px) {
+      .first .first_text {
+        padding: 40px; } }
+    @media only screen and (min-width: 200px) and (max-width: 650px) {
+      .first .first_text {
+        padding: 20px;
+        font-size: 1.2rem; } }
     .first .first_text p {
       margin-bottom: 50px; }
       .first .first_text p span {
@@ -66,11 +108,17 @@ first
       text-transform: uppercase;
       font-size: 2.3rem;
       text-align: center; }
+      @media only screen and (min-width: 200px) and (max-width: 650px) {
+        .first .first_text h1 {
+          font-size: 2rem; } }
     .first .first_text h1 + p {
       font-size: 1.8rem;
       text-align: center;
       margin: 20px 0;
       font-weight: bolder; }
+      @media only screen and (min-width: 200px) and (max-width: 650px) {
+        .first .first_text h1 + p {
+          font-size: 1.6rem; } }
     .first .first_text ul {
       margin: 30px 0 30px 30px; }
 
@@ -91,16 +139,23 @@ reference
   border-radius: 15px;
   padding: 10px 70px;
   background-color: #f0f0f0; }
+  @media only screen and (min-width: 200px) and (max-width: 650px) {
+    .references {
+      padding: 10px 30px; } }
   .references h3 {
     text-align: center;
     font-size: 1.5rem; }
   .references img {
     margin: 50px 0 40px 0; }
   .references .references_columns {
-    column-count: 2;
-    color: #909090; }
-    .references .references_columns li {
-      padding: 5px 10px; }
+    color: #909090;
+    column-count: 2; }
+    @media only screen and (min-width: 200px) and (max-width: 650px) {
+      .references .references_columns {
+        column-count: 1; } }
+    @media only screen and (min-width: 200px) and (max-width: 650px) {
+      .references .references_columns li {
+        padding: 2px 5px; } }
 
 /*******************
 footer
@@ -109,10 +164,16 @@ footer {
   color: #707070;
   text-align: center;
   padding: 200px 100px 5px 100px; }
+  @media only screen and (min-width: 200px) and (max-width: 650px) {
+    footer {
+      padding: 100px 20px 5px 20px; } }
   footer p {
     max-width: 950px;
     margin: 50px auto; }
     footer p span {
       font-weight: bold; }
+  footer .footer_logo {
+    width: 200px;
+    margin: 0 auto; }
 
 /*# sourceMappingURL=style.css.map */
